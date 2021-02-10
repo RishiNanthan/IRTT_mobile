@@ -3,16 +3,18 @@ import { StyleSheet, View, Text } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 
-const AppBar = ( props ) => {
+const AppBar = ({ navigation, title }) => {
 
     const openDrawer = () => {
-        props.navigation.openDrawer();
+        navigation.openDrawer();
     }
+
+    title = title === null ? "IRTT" : title ;
 
     return (
         <View style={ styles.appbar }>
             <MaterialIcons name="menu" size={ 25 } style={ styles.icon } onPress={ openDrawer } />
-            <Text style={ styles.title }>IRTT</Text>
+            <Text style={ styles.title }>{ title }</Text>
         </View>
     );
 }
