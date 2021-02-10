@@ -43,7 +43,7 @@ const Login = ( { userType, setUserType, setUserID, setPassword, userid, passwor
         },
         input: {
             width: '60%',
-            borderBottomColor: 'gray',
+            borderBottomColor: color,
             borderBottomWidth: 2,
             margin: 20,
             textAlign: 'center',
@@ -81,12 +81,17 @@ const Login = ( { userType, setUserType, setUserID, setPassword, userid, passwor
                 placeholder={ userType === 'student' ? 'Roll Number' : 'Staff ID' } 
                 autoCapitalize="characters" 
                 value={ user.id }
+                maxLength={8}
+                selectionColor={ color }
                 onChangeText={ val => setUser({...user, id: val}) } 
             />
             <TextInput 
                 style={ styles.input }
                 placeholder='Password' 
                 value={ user.pw } 
+                secureTextEntry={ true }
+                maxLength={16}
+                selectionColor={ color }
                 onChangeText={ val => setUser({...user, pw: val}) } 
             />
             <Button
