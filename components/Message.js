@@ -3,7 +3,6 @@ import { StyleSheet, View, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import { MaterialIcons } from '@expo/vector-icons';
-import { withOrientation } from 'react-navigation';
 
 
 const Message = ({message, close}) => {
