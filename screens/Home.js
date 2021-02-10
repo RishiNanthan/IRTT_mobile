@@ -11,12 +11,16 @@ const Home = ( { navigation } ) => {
     const [password, setPassword] = useState('');
 
     const [loggedIn, setLoggedIn] = useState(false);
-    
+    const [message, setMessage] = useState(null);
+
     useEffect(() => {
         // Log In logic
 
         if(userid !== '' && password !== ''){
             setLoggedIn(true);
+        }
+        else{
+            setMessage({error: true, text: "Please fill details below"});
         }
     }, [userid]);
 
@@ -29,6 +33,8 @@ const Home = ( { navigation } ) => {
                 setUserID={ setUserID } 
                 setPassword={ setPassword }
                 setUserType= { setUserType } 
+                message={ message }
+                setMessage={ setMessage }
             />
         );
     }

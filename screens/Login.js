@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, Button, TextInput, TouchableOpacity, Touchable } from 'react-native';
 
 import RadioButton from '../components/RadioButton';
+import Message from '../components/Message';
 
 
-const Login = ( { userType, setUserType, setUserID, setPassword, userid, password } ) => {
+const Login = ( { userType, setUserType, setUserID, setPassword, userid, password, message, setMessage } ) => {
 
     const color = userType === "student" ? 'orange' : 'lightgreen';
 
@@ -72,6 +73,8 @@ const Login = ( { userType, setUserType, setUserID, setPassword, userid, passwor
                     <RadioButton selected={ userType === "staff" } color={ color } > Staff </RadioButton>
                 </TouchableOpacity>
             </View>
+
+            <Message message={ message } close={ () => { setMessage({...message, text: ""})} } />
 
             <TextInput
                 style={ styles.input }
