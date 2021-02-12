@@ -1,9 +1,13 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import DashBoard from '../screens/DashBoard';
 import AppBar from '../components/AppBar';
 
+
+
+/*
 
 const screens = {
     DashBoard: {
@@ -23,5 +27,18 @@ const HomeStack = createStackNavigator(screens, {
         
     }
 });
+
+*/
+
+const Stack = createStackNavigator();
+
+function HomeStack(){
+    <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name="DashBoard" component={ DashBoard } />
+        </Stack.Navigator>
+    </NavigationContainer>
+}
+
 
 export default HomeStack;

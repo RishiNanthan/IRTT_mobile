@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, Text, Button } from 'react-native';
 
 
@@ -7,7 +7,10 @@ const DashBoard = ({ navigation, screenProps }) => {
     return (
         <View>
             <Text>dashBoard</Text>
-            <Button onPress={() => { screenProps.logout() }}>Logout</Button>
+            <Button
+                title="Log Out" 
+                onPress={() => { screenProps.logout() }} 
+            />
         </View>
     );
 }
