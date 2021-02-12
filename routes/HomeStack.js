@@ -7,10 +7,12 @@ import AppBar from '../components/AppBar';
 
 const screens = {
     DashBoard: {
-        screen: DashBoard,
-        navigationOptions: ({ navigation }) => {
+        screen: ({ screenProps, navigation }) => {
+            return <DashBoard screenProps={ screenProps } /> 
+        },
+        navigationOptions: ({ screenProps, navigation }) => {
             return {
-                headerTitle: () => <AppBar navigation={ navigation } /> ,
+                headerTitle: () => <AppBar screenProps={ screenProps } navigation={ navigation } title="IRTT - DashBoard" />,
             }
         }
     },
@@ -18,11 +20,7 @@ const screens = {
 
 const HomeStack = createStackNavigator(screens, {
     defaultNavigationOptions: {
-        headerStyle: {
-            backgroundColor: 'lightblue',
-            height: 70,
-        },
-        headerTintColor: 'white',
+        
     }
 });
 

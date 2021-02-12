@@ -41,7 +41,15 @@ const Home = ( { navigation } ) => {
 
     else{
         return (
-            <Drawer />            
+            <Drawer 
+                screenProps={
+                    {
+                        userType: usertype,
+                        userid: userid,
+                        logout: () => { setLoggedIn(false) }
+                    }
+                }
+            />            
         );    
     }
 }

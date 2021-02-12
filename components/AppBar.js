@@ -3,10 +3,10 @@ import { StyleSheet, View, Text } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 
-const AppBar = ({ navigation, title }) => {
+const AppBar = ({ navigation, title, screenProps }) => {
 
     const openDrawer = () => {
-        navigation.openDrawer();
+        screenProps.drawerNavigation.openDrawer();
     }
 
     title = title === null ? "IRTT" : title ;
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: 'orange',
     },
     title: {
         fontWeight: 'bold',
