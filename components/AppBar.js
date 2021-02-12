@@ -8,7 +8,7 @@ const AppBar = ({ navigation, title, data, drawerNavigation }) => {
     const styles = StyleSheet.create({
         appbar: {
             padding: 10,
-            paddingTop: 20,
+            paddingTop: 50,
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'center',
@@ -16,13 +16,15 @@ const AppBar = ({ navigation, title, data, drawerNavigation }) => {
         },
         title: {
             fontWeight: 'bold',
-            fontSize: 15,
+            fontSize: 18,
             color: 'white',
         },
         icon: {
-            position: 'absolute',
-            left: 10,
             color: 'white',
+        },
+        textblock: {
+            alignItems: 'center',
+            width: '80%',
         }
     });
 
@@ -35,7 +37,9 @@ const AppBar = ({ navigation, title, data, drawerNavigation }) => {
     return (
         <View style={ styles.appbar }>
             <MaterialIcons name="menu" size={ 25 } style={ styles.icon } onPress={ openDrawer } />
-            <Text style={ styles.title }>{ title }</Text>
+            <View style={ styles.textblock }>
+                <Text style={ styles.title }>{ title }</Text>
+            </View>
         </View>
     );
 }

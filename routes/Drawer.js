@@ -1,5 +1,4 @@
 import React from 'react';
-import { useWindowDimensions } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -11,7 +10,6 @@ import HomeStack from './HomeStack';
 const Drawer = createDrawerNavigator();
 
 function AppDrawer({ data }) {
-    const dimensions = useWindowDimensions();
 
     return (
         <NavigationContainer>
