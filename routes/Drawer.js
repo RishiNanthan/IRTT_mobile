@@ -16,7 +16,7 @@ function AppDrawer({ data }) {
     return (
         <NavigationContainer>
             <Drawer.Navigator>
-                <Drawer.Screen name="Home" drawerType={ dimensions.width > 768 ? 'permanent': 'front' } >
+                <Drawer.Screen name="Home" >
                     { props =>  <HomeStack data={ data } drawerNavigation={ props.navigation } />  }
                 </Drawer.Screen>
 
