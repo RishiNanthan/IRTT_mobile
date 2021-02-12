@@ -42,7 +42,7 @@ const Home = ( { navigation } ) => {
     else{
         return (
             <Drawer 
-                screenProps={
+                data={
                     {
                         userType: usertype,
                         userid: userid,
