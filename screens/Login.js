@@ -54,6 +54,7 @@ const Login = ( { userType, setUserType, setUserID, setPassword, userid, passwor
     });
 
     const [user, setUser] = useState({id: userid, pw: password});
+    const [msgFlag, setMsgFlag] = useState(false);
 
     return (
         <View style={ styles.container }>
@@ -74,7 +75,10 @@ const Login = ( { userType, setUserType, setUserID, setPassword, userid, passwor
                 </TouchableOpacity>
             </View>
 
-            <Message message={ message } close={ () => { setMessage({...message, text: ""})} } />
+            {
+                msgFlag && 
+                <Message message={ message } close={ () => { setMsgFlag(false)} } />
+            }
 
             <TextInput
                 style={ styles.input }
@@ -99,8 +103,10 @@ const Login = ( { userType, setUserType, setUserID, setPassword, userid, passwor
                 color={ color }
                 title="Login" 
                 onPress={ () => {
+                    // Login => 
                     setPassword(user.pw);
                     setUserID(user.id);
+                    setMsgFlag(true);
                 }} 
             />
         </View>

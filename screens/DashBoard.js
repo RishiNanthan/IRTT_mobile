@@ -4,7 +4,6 @@ import { View, Text, Button } from 'react-native';
 
 const DashBoard = ({ navigation, screenProps }) => {
 
-    console.log(screenProps);
     return (
         <View>
             <Text>dashBoard</Text>

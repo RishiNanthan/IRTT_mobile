@@ -12,7 +12,7 @@ const screens = {
         },
         navigationOptions: ({ screenProps, navigation }) => {
             return {
-                headerTitle: () => <AppBar screenProps={ screenProps } navigation={ navigation } title="IRTT - DashBoard" />,
+                header: () => <AppBar screenProps={ screenProps } navigation={ navigation } title="IRTT - DashBoard" />,
             }
         }
     },

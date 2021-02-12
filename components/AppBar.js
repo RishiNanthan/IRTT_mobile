@@ -21,8 +21,7 @@ const AppBar = ({ navigation, title, screenProps }) => {
 
 const styles = StyleSheet.create({
     appbar: {
-        height: '100%',
-        width: '100%',
+        padding: 10,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
@@ -30,7 +29,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontWeight: 'bold',
-        fontSize: 20,
+        fontSize: 15,
         color: 'white',
     },
     icon: {

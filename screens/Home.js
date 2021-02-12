@@ -22,7 +22,7 @@ const Home = ( { navigation } ) => {
         else{
             setMessage({error: true, text: "Please fill details below"});
         }
-    }, [userid]);
+    }, [userid, password]);
 
     if(!loggedIn){
         return (
@@ -46,7 +46,10 @@ const Home = ( { navigation } ) => {
                     {
                         userType: usertype,
                         userid: userid,
-                        logout: () => { setLoggedIn(false) }
+                        logout: () => {
+                            setPassword(""); 
+                            setLoggedIn(false); 
+                        }
                     }
                 }
             />            
